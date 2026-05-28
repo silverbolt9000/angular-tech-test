@@ -1,59 +1,156 @@
-# AngularUsersTest
+# Angular Technical Test
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.12.
+Aplicação desenvolvida como solução para o teste técnico de Front-End Angular.
 
-## Development server
+## Tecnologias utilizadas
 
-To start a local development server, run:
+* Angular 21+
+* Angular Material
+* RxJS
+* Signals
+* NgRx
+* TypeScript
+* SCSS
+* Vite
+* Vitest/Jest
+
+---
+
+# Funcionalidades implementadas
+
+## Listagem de usuários
+
+* Cards de usuários
+* Busca com debounce
+* Loading state
+* Error state
+* Criação de usuário
+* Edição de usuário
+* Formulário reativo
+* Validações de formulário
+* Modal utilizando Angular Material
+
+---
+
+# Exemplos técnicos implementados
+
+## RxJS
+
+* DebounceTime
+* SwitchMap
+* Cancelamento de requisições
+* Async Pipe
+* Gerenciamento de subscriptions
+
+## Signals
+
+* Estado local com Signals
+* Computed signals
+* Output utilizando effect
+
+## NgRx
+
+* Actions
+* Reducers
+* Selectors
+* Effects
+* Fluxo assíncrono mockado
+
+## Performance
+
+* ChangeDetectionStrategy.OnPush
+* trackBy
+* Renderização otimizada de listas
+
+## TypeScript
+
+* Refatoração com boas práticas
+* Generics
+* Tipagem forte
+* Reutilização de código
+
+---
+
+# Estrutura do projeto
+
+```txt
+src/app
+├── core
+├── shared
+├── features
+│   └── users
+├── examples
+│   ├── rxjs-search
+│   ├── signals-cart
+│   ├── ngrx-todo
+│   ├── performance
+│   ├── refactor
+│   └── generics
+└── layout
+```
+
+---
+
+# Instalação
+
+## Clonar o projeto
+
+```bash
+git clone <url-do-repositorio>
+```
+
+---
+
+## Instalar dependências
+
+```bash
+npm install
+```
+
+---
+
+## Executar o projeto
+
+```bash
+npm start
+```
+
+ou
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+A aplicação ficará disponível em:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```txt
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
+
+# Executar testes
 
 ```bash
-ng generate --help
+npm run test
 ```
 
-## Building
+---
 
-To build the project run:
+# Decisões técnicas
 
-```bash
-ng build
-```
+* Utilização de Standalone Components
+* Estado local com Signals
+* Gerenciamento global com NgRx
+* Async Pipe para evitar memory leaks
+* Componentização focada em reutilização
+* Estratégia OnPush para otimização de performance
+* Organização modular baseada em features
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+# Observações
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Os dados utilizados na aplicação são mockados localmente para simplificar a execução do projeto sem necessidade de backend.
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Todos os exemplos técnicos solicitados no teste foram implementados e disponibilizados através do menu lateral da aplicação.
