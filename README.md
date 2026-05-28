@@ -96,7 +96,7 @@ src/app
 ## Clonar o projeto
 
 ```bash
-git clone <url-do-repositorio>
+git clone https://github.com/silverbolt9000/angular-tech-test.git
 ```
 
 ---
