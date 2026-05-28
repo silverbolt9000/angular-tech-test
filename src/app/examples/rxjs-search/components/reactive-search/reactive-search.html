@@ -1,0 +1,55 @@
+<div class="search-page">
+  <mat-card class="search-card">
+    <div class="search-card__header">
+      <h1>RxJS Reactive Search</h1>
+
+      <p>
+        Exemplo utilizando debounceTime,
+        switchMap e async pipe.
+      </p>
+    </div>
+
+    <mat-form-field appearance="outline" class="search-field">
+      <mat-label>
+        Buscar usuário
+      </mat-label>
+
+      <input matInput type="text" [formControl]="searchControl" placeholder="Digite um nome" />
+
+      <mat-icon matPrefix>
+        search
+      </mat-icon>
+    </mat-form-field>
+
+    @if (loading$ | async) {
+    <div class="loading-container">
+      <mat-spinner diameter="32"></mat-spinner>
+
+      <span>Carregando...</span>
+    </div>
+    }
+
+    @if (
+    (results$ | async)?.length
+    ) {
+    <mat-list>
+      @for (
+      result of results$ | async;
+      track result.id
+      ) {
+      <mat-list-item>
+        <div class="result-item">
+          <mat-icon>
+            person
+          </mat-icon>
+
+          <span>
+            {{ result.nome }}
+          </span>
+        </div>
+      </mat-list-item>
+      }
+    </mat-list>
+    }
+  </mat-card>
+</div>

@@ -1,0 +1,63 @@
+<form class="user-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="outline">
+    <mat-label>Nome</mat-label>
+
+    <input matInput formControlName="nome" />
+
+    @if (form.controls.nome.hasError('required')) {
+    <mat-error>
+      Nome é obrigatório
+    </mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>E-mail</mat-label>
+
+    <input matInput formControlName="email" />
+
+    @if (form.controls.email.hasError('required')) {
+    <mat-error>
+      E-mail é obrigatório
+    </mat-error>
+    }
+
+    @if (form.controls.email.hasError('email')) {
+    <mat-error>
+      E-mail inválido
+    </mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>CPF</mat-label>
+
+    <input matInput formControlName="cpf" />
+
+    @if (form.controls.cpf.hasError('required')) {
+    <mat-error>
+      CPF é obrigatório
+    </mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Telefone</mat-label>
+
+    <input matInput formControlName="telefone" />
+
+    @if (
+    form.controls.telefone.hasError('required')
+    ) {
+    <mat-error>
+      Telefone é obrigatório
+    </mat-error>
+    }
+  </mat-form-field>
+
+  <app-user-phone-type-select [control]="form.controls.tipoTelefone" />
+
+  <button mat-flat-button type="submit" [disabled]="form.invalid">
+    Salvar
+  </button>
+</form>

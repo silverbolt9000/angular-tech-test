@@ -1,0 +1,75 @@
+<aside class="sidebar">
+  <div class="sidebar__logo">
+    <h1>Angular Test</h1>
+
+    <span>
+      Angular 17+ · RxJS · Signals
+    </span>
+  </div>
+
+  <nav class="sidebar__nav">
+    <div class="sidebar__section">
+      <span class="sidebar__section-title">
+        Aplicação
+      </span>
+
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{
+          exact: true
+        }">
+        <mat-icon>groups</mat-icon>
+
+        <span>Usuários</span>
+      </a>
+    </div>
+
+    <div class="sidebar__section">
+      <span class="sidebar__section-title">
+        Exemplos Técnicos
+      </span>
+      <a routerLink="/examples/refactor" routerLinkActive="active">
+        <mat-icon>code </mat-icon>
+        <span>1.1 - TypeScript Refactoring</span>
+      </a>
+
+      <a routerLink="/examples/generics" routerLinkActive="active">
+        <mat-icon>code </mat-icon>
+        <span>1.2 - TypeScript Generics</span>
+      </a>
+
+      <a routerLink="/examples/rxjs-search" routerLinkActive="active">
+        <mat-icon>search </mat-icon>
+        <span> RxJS Search</span>
+      </a>
+
+      <a routerLink="/examples/signals-cart" routerLinkActive="active">
+        <mat-icon>shopping_cart </mat-icon>
+
+        <span> Signals Cart </span>
+      </a>
+
+      <a routerLink="/examples/ngrx-todo" routerLinkActive="active">
+        <mat-icon>checklist </mat-icon>
+
+        <span> NgRx Todo</span>
+      </a>
+
+      <a routerLink="/examples/generics" routerLinkActive="active">
+        <mat-icon>code </mat-icon>
+
+        <span> TypeScript Generics</span>
+      </a>
+
+      <a routerLink="/examples/change-detection" routerLinkActive="active">
+        <mat-icon>bolt </mat-icon>
+
+        <span> Change Detection</span>
+      </a>
+
+      <a routerLink="/examples/performance" routerLinkActive="active">
+        <mat-icon>speed </mat-icon>
+
+        <span> Performance</span>
+      </a>
+    </div>
+  </nav>
+</aside>

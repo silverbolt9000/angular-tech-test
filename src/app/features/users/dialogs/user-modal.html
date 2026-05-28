@@ -1,0 +1,21 @@
+<div class="user-modal">
+  <div class="user-modal__header">
+    <div class="user-modal__title">
+      <h2>
+        {{ user ? 'Editar usuário' : 'Novo usuário' }}
+      </h2>
+
+      <p>
+        {{
+        user
+        ? 'Atualize as informações do usuário.'
+        : 'Preencha os dados para cadastrar um novo usuário.'
+        }}
+      </p>
+    </div>
+  </div>
+
+  <div class="user-modal__content">
+    <app-user-form [user]="user" (save)="onSave($event)" />
+  </div>
+</div>

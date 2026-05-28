@@ -1,0 +1,14 @@
+<mat-card class="user-card">
+  <mat-card-content>
+    <h2>{{ user().nome }}</h2>
+
+    <p>{{ user().email }}</p>
+  </mat-card-content>
+
+  <mat-card-actions align="end">
+    <button mat-flat-button type="button" (click)="onEdit()">
+      Editar
+    </button>
+  </mat-card-actions>
+</mat-card>
+<mat-divider></mat-divider>

@@ -1,0 +1,115 @@
+<div class="todo-page">
+  <mat-card class="todo-card">
+    <div class="todo-header">
+      <div>
+        <h1>NgRx Todo</h1>
+
+        <p>
+          Exemplo utilizando
+          Actions, Reducers,
+          Selectors e Effects.
+        </p>
+      </div>
+    </div>
+
+    <div class="todo-stats">
+      <div class="stat-card">
+        <span>Total</span>
+
+        <strong>
+          {{
+          (todos$ | async)
+          ?.length
+          }}
+        </strong>
+      </div>
+
+      <div class="stat-card">
+        <span>Pendentes</span>
+
+        <strong>
+          {{
+          (
+          pendingTodos$
+          | async
+          )?.length
+          }}
+        </strong>
+      </div>
+
+      <div class="stat-card">
+        <span>Concluídas</span>
+
+        <strong>
+          {{
+          (
+          completedTodos$
+          | async
+          )?.length
+          }}
+        </strong>
+      </div>
+    </div>
+
+    <div class="todo-filters">
+      <button mat-stroked-button [class.active]="
+          filter === 'all'
+        " (click)="
+          setFilter('all')
+        ">
+        Todas
+      </button>
+
+      <button mat-stroked-button [class.active]="
+          filter === 'pending'
+        " (click)="
+          setFilter(
+            'pending'
+          )
+        ">
+        Pendentes
+      </button>
+
+      <button mat-stroked-button [class.active]="
+          filter ===
+          'completed'
+        " (click)="
+          setFilter(
+            'completed'
+          )
+        ">
+        Concluídas
+      </button>
+    </div>
+
+    <div class="todo-loading" *ngIf="loading$ | async">
+      <mat-spinner diameter="28"></mat-spinner>
+
+      <span>
+        Carregando tarefas...
+      </span>
+    </div>
+
+    <div class="todo-list">
+      <div class="todo-item" [class.todo-item--completed]="
+          todo.completed
+        " *ngFor="
+          let todo of todos$ | async
+        ">
+        <ng-container *ngIf="
+            isVisible(todo)
+          ">
+          <mat-checkbox [checked]="
+              todo.completed
+            " (change)="
+              toggleTodo(
+                todo.id
+              )
+            ">
+            {{ todo.titulo }}
+          </mat-checkbox>
+        </ng-container>
+      </div>
+    </div>
+  </mat-card>
+</div>

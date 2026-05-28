@@ -1,0 +1,5 @@
+<div class="user-list">
+  @for (user of users(); track user.id) {
+  <app-user-card [user]="user" (edit)="edit.emit($event)" />
+  }
+</div>

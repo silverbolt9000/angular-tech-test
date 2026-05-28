@@ -1,0 +1,99 @@
+<div class="generics-page">
+  <mat-card class="generics-card">
+    <h1>
+      Generics + Paginação
+    </h1>
+
+    <p class="description">
+      Exemplo utilizando
+      Generics em TypeScript
+      para filtragem e
+      paginação reutilizável.
+    </p>
+
+    <mat-form-field appearance="outline">
+      <mat-label>
+        Buscar usuário
+      </mat-label>
+
+      <input matInput [ngModel]="filtro()" (ngModelChange)="
+          filtro.set($event)
+        " />
+    </mat-form-field>
+
+    <div class="stats">
+      <span>
+        Total filtrado:
+        <strong>
+          {{
+          resultado().total
+          }}
+        </strong>
+      </span>
+
+      <span>
+        Página:
+        <strong>
+          {{
+          paginaAtual()
+          }}
+        </strong>
+      </span>
+    </div>
+
+    <div class="users-grid">
+      @for (
+      usuario of
+      resultado().itens;
+      track usuario.id
+      ) {
+      <div class="user-card">
+        <h3>
+          {{ usuario.nome }}
+        </h3>
+
+        <p>
+          {{ usuario.email }}
+        </p>
+      </div>
+      }
+    </div>
+
+    <div class="pagination">
+      <button mat-stroked-button (click)="
+          paginaAnterior()
+        ">
+        Anterior
+      </button>
+
+      <button mat-flat-button color="primary" (click)="
+          proximaPagina()
+        ">
+        Próxima
+      </button>
+    </div>
+
+    <div class="explanation">
+      <h2>
+        Explicação técnica
+      </h2>
+
+      <p>
+        A função
+        filtrarEPaginar&lt;T&gt;
+        utiliza Generics para
+        funcionar com qualquer
+        tipo de dado mantendo
+        tipagem forte.
+      </p>
+
+      <p>
+        O filtro é aplicado antes
+        da paginação, retornando
+        apenas os itens da página
+        atual e o total de
+        registros filtrados.
+      </p>
+    </div>
+  </mat-card>
+</div>

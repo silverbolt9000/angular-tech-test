@@ -1,0 +1,70 @@
+<div class="refactor-page">
+  <mat-card class="refactor-card">
+    <h1>
+      Refatoração TypeScript
+    </h1>
+
+    <p class="description">
+      Demonstração de melhorias
+      aplicadas utilizando
+      boas práticas de
+      TypeScript e Clean Code.
+    </p>
+
+    <div class="section">
+      <h2>
+        Problemas identificados
+      </h2>
+
+      <div class="chips">
+        @for (
+        problema of problemas;
+        track problema
+        ) {
+        <mat-chip>
+          {{ problema }}
+        </mat-chip>
+        }
+      </div>
+    </div>
+
+    <div class="code-grid">
+      <div class="code-block">
+        <h3>
+          Código original
+        </h3>
+
+        <pre>
+<code>{{ codigoOriginal }}</code>
+        </pre>
+      </div>
+
+      <div class="code-block">
+        <h3>
+          Código refatorado
+        </h3>
+
+        <pre>
+<code>{{ codigoRefatorado }}</code>
+        </pre>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>
+        Melhorias aplicadas
+      </h2>
+
+      <div class="chips">
+        @for (
+        melhoria of melhorias;
+        track melhoria
+        ) {
+        <mat-chip highlighted>
+          {{ melhoria }}
+        </mat-chip>
+        }
+      </div>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,25 @@
+<div class="users-page">
+  <mat-card class="users-container">
+    <div class="users-page__header">
+      <h1>Usuários</h1>
+
+      <button mat-mini-fab type="button" aria-label="Novo usuário" (click)="onCreateUser()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+
+    <app-user-search (search)="onSearch($event)" />
+
+    @if (usersStore.loading()) {
+    <app-loading-spinner />
+    } @else if (usersStore.error()) {
+    <app-empty-state title="Erro ao carregar usuários" [description]="usersStore.error()!" />
+    } @else if (
+    usersStore.filteredUsers().length === 0
+    ) {
+    <app-empty-state title="Nenhum usuário encontrado" description="Tente ajustar sua busca." />
+    } @else {
+    <app-user-list [users]="usersStore.filteredUsers()" (edit)="onEditUser($event)" />
+    }
+  </mat-card>
+</div>

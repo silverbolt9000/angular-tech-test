@@ -1,0 +1,53 @@
+<div class="cd-page">
+  <mat-card class="cd-card">
+    <h1>
+      Change Detection —
+      OnPush
+    </h1>
+
+    <p class="cd-description">
+      Exemplo demonstrando a
+      estratégia
+      ChangeDetectionStrategy.OnPush
+      utilizando ChangeDetectorRef.
+    </p>
+
+    <div class="cd-content">
+      <div class="cd-item">
+        <span>Texto:</span>
+
+        <strong>
+          {{ texto }}
+        </strong>
+      </div>
+
+      <div class="cd-item">
+        <span>Contador:</span>
+
+        <strong>
+          {{ contador }}
+        </strong>
+      </div>
+    </div>
+
+    <div class="cd-explanation">
+      <h3>Por que isso acontece?</h3>
+
+      <p>
+        Com OnPush, o Angular só
+        executa detecção de
+        mudanças em cenários
+        específicos.
+      </p>
+
+      <p>
+        Como o valor foi alterado
+        dentro de subscribe e
+        setInterval, utilizamos
+        ChangeDetectorRef com
+        markForCheck() para
+        notificar o Angular.
+      </p>
+    </div>
+  </mat-card>
+</div>
